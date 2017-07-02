@@ -16,6 +16,23 @@ class LinkdList(object):
 
     # Insert Node at the begining of the linked List
     def insert_beg(self, data):
-        new_head = node(data):
+        new_head = node(data)
         new_head.next = self.head
         self.head = new_head
+    
+    # Insert a node at a specific position
+    def insertAt(self, data, position):
+        if not self.head:
+            self.head = Node(data)
+
+        if position == 0:
+            insert_beg(data)
+
+        # getting the node that is before the desired position
+        tmp_node = self.head
+        for i in range(position - 1):
+            tmp_node = tmp_node.next
+
+        # node currently at the desired position
+        aux_node = tmp_node.next
+        tmp_node.next = Node(data, aux_node)
