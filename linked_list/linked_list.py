@@ -36,3 +36,13 @@ class LinkdList(object):
         # node currently at the desired position
         aux_node = tmp_node.next
         tmp_node.next = Node(data, aux_node)
+
+    # Deletes the node at the given position
+    def Delete(self, position):
+        if position == 0:
+            self.head = self.head.next
+    
+        aux = self.head
+        for _ in range(position-1):
+            aux = aux.next
+        aux.next = aux.next.next 
