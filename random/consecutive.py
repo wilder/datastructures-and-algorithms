@@ -19,25 +19,27 @@ def consecutive(a, target):
     s = 0
 
     while i < len(a):
-
+       
         if s > target:
-            #remove the first non-removed element
             s-=a[low]
             low+=1
             continue
+        
 
         if s == target:
             print a[low:i]
             return True 
-        
+
         s+=a[i]
         i+=1
-    
-    return False
-        
-a = [1, 3, 5, 7, 9]
-target = 12
+   
+    return s == target
 
-print consecutive(a, target)
-
-
+assert consecutive([3, 7, 9, 15, 2, 1, 5], 8)
+assert consecutive([1, 3, 4, 7, 9, 15, 2, 5], 7)
+assert consecutive([5, 7, 3, 1, 4], 4)
+assert consecutive([1,2,3,4,5], 7)
+assert consecutive([100, 2, 3, 1], 5)
+assert consecutive([1, 3, 5, 7, 9], 12)
+assert consecutive([1, 3, 7], 11)
+assert consecutive([1, 3, 5, 7, 9], 8)
