@@ -5,28 +5,18 @@ class node:
       self.left = None
       self.right = None
 """
-
-def check_left(prev, node):  
+import sys
+def check(node, minv, maxv):  
     if not node:
         return True
     
-    if prev <= node.data:
+    if node.data >= maxv or node.data <= minv:
         return False
     
-    return check_left(node.data, node.left) and check_right(node.data, node.right)
-
-def check_right(prev, node):
-    if not node:
-        return True
-    
-    if prev >= node.data:
-        return False
-    
-    return check_left(node.data, node.left) and check_right(node.data, node.right)
+    return check(node.left, minv, node.data) and check(node.right, node.data, maxv)
 
 def check_binary_search_tree_(root):
     b = True
     if root:
-        b = check_left(root.data, root.left) and check_right(root.data, root.right)
-        
+        b = check(root.left, -sys.maxsize, root.data) and check(root.right, root.data, sys.maxsize) 
     return b
