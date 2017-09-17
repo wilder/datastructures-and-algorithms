@@ -40,26 +40,24 @@ def without_string(base, remove):
             base_indexc = base_index
             
             #iterate over the string until they're different or end of the string
-            rm_index = 1
+            rm_index = 0
+
+            string_being_removed = ""
             while rm_index < len(remove):
-                if remove[rm_index] != base[base_indexc]:
+                if remove[rm_index] != base[base_indexc] or base_indexc+1 == len(base):
+                    final_str += string_being_removed
                     break
+                string_being_removed += base[base_indexc]
+                base_indexc+=1
                 rm_index += 1
 
-            '''
-            base string contains the string that should be removed,
-            hence, increment the original base index so the occurence
-            wont be added to the final string
-            '''
-
-            base_index += len(remove)
-            continue
+            base_index += rm_index
 
         #if the current character is not part of the remove string, add it to the final string
         final_str += base[base_index]
         base_index += 1
     return final_str
 
-assert(without_string("Hello there", "llo") == "He there")
-assert(without_string("Hello there", "e") == "Hllo thr")
+assert(without_string("Hellallo there", "llo") == "Hella there")
+assert(without_string("Hello there", "el") == "Hlo there")
 assert(without_string("Hello there", "x") == "Hello there")
