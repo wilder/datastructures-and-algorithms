@@ -18,14 +18,18 @@ for _ in range(test_cases):
         adjacency_dict[i1].append(i2)
         adjacency_dict[i2].append(i1)
     
-    distance_dict = {}
+    distance_dict = defaultdict(lambda: 0)
     current_distance = 1
 
-    adjacents = adjacency_dict[final_island]
+    adjacents = [final_island]
     while adjacents:
+        nexxt = []
         for island in adjacents:
-            distance_dict[island] = current_distance
+            for v in adjacency_dict[island]:
+                if(distance_dict[v] == 0):
+                    distance_dict[v] = current_distance
+                    nexxt.append(v)
         current_distance += 1
-        adjacents.pop()
+        adjacents = nexxt
     
-    print distance_dict
+    print distance_dict[1]
