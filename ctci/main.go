@@ -9,6 +9,7 @@ import (
 func main() {
 	exercise1_1()
 	exercise1_2()
+	exercise1_3()
 }
 
 
@@ -26,4 +27,11 @@ func exercise1_1(){
 
 func exercise1_2()  {
 	fmt.Print("Exercise 1.2 - reverseCString([]int32{'h','e', 'l','l','o'}): %v\n", chapter1.ReverseCString([]string{"h","e", "l","l","o"})) //olleh
+}
+
+func exercise1_3(){
+	fmt.Printf("Exercise 1.3 - hasAllUniqueCharacters(\"abcde\"): %s\n", chapter1.RemoveDuplicates("abcde")) //abcde
+	fmt.Printf("Exercise 1.3 - hasAllUniqueCharacters(\"abcdbe\"): %s\n", chapter1.RemoveDuplicates("abcdbe")) //abcde
+	fmt.Printf("Exercise 1.3 - hasAllUniqueCharacters(\"abecde\"): %s\n", chapter1.RemoveDuplicates("abecde")) //abecd
+	fmt.Printf("Exercise 1.3 - hasAllUniqueCharacters(\"aabcde\"): %s\n", chapter1.RemoveDuplicates("aabcdeab")) //abcde
 }
