@@ -10,7 +10,8 @@ func main() {
 	//exercise1_1()
 	exercise1_2()
 	//exercise1_3()
-	exercise1_4()
+	//exercise1_4()
+	exercise1_5()
 }
 
 
@@ -27,8 +28,8 @@ func exercise1_1(){
 }
 
 func exercise1_2()  {
-	fmt.Print("Exercise 1.2 - reverseCString([]int32{'h','e', 'l','l','o'}): %v\n", chapter1.ReverseCString([]string{"h","e", "l","l","o"})) //olleh
-	fmt.Print("Exercise 1.2+ - reverseCString2([]int32{'h','e', 'l','l','o'}): %v\n", chapter1.ReverseCString2([]string{"h","e", "l","l","o"})) //olleh
+	fmt.Printf("Exercise 1.2 - reverseCString([]int32{'h','e', 'l','l','o'}): %s\n", chapter1.ReverseCString([]string{"h","e", "l","l","o"})) //olleh
+	fmt.Printf("Exercise 1.2+ - reverseCString2([]int32{'h','e', 'l','l','o'}): %s\n", chapter1.ReverseCString2([]string{"h","e", "l","l","o"})) //olleh
 }
 
 func exercise1_3(){
@@ -48,4 +49,11 @@ func exercise1_4(){
 	fmt.Printf("Exercise 1.4+ - isAnagram2(\"abba\"): %t\n", chapter1.IsAnagram2("abba")) //true
 	fmt.Printf("Exercise 1.4+ - isAnagram2(\"abbacbba\"): %t\n", chapter1.IsAnagram2("abbabba")) //true
 	fmt.Printf("Exercise 1.4+ - isAnagram2(\"aabbd\"): %t\n", chapter1.IsAnagram2("aabbd")) //false
+}
+
+func exercise1_5(){
+	fmt.Printf("Exercise 1.5 - urlEncode(\"hello\"): %s\n", chapter1.UrlEncode("hello")) //hello
+	fmt.Printf("Exercise 1.5 - urlEncode(\"hello world\"): %s\n", chapter1.UrlEncode("hello world ")) //hello%20world%20)
+	fmt.Printf("Exercise 1.5+ - urlEncode2(\"hello\"): %s\n", chapter1.UrlEncode2(strings.Split("hello", ""))) //hello
+	fmt.Printf("Exercise 1.5+ - urlEncode2(\"hello world\"): %s\n", chapter1.UrlEncode2(strings.Split("hello world ", ""))) //hello%20world%20)
 }
