@@ -8,7 +8,7 @@ import (
 
 func main() {
 	//exercise1_1()
-	//exercise1_2()
+	exercise1_2()
 	//exercise1_3()
 	exercise1_4()
 }
@@ -28,6 +28,7 @@ func exercise1_1(){
 
 func exercise1_2()  {
 	fmt.Print("Exercise 1.2 - reverseCString([]int32{'h','e', 'l','l','o'}): %v\n", chapter1.ReverseCString([]string{"h","e", "l","l","o"})) //olleh
+	fmt.Print("Exercise 1.2+ - reverseCString2([]int32{'h','e', 'l','l','o'}): %v\n", chapter1.ReverseCString2([]string{"h","e", "l","l","o"})) //olleh
 }
 
 func exercise1_3(){

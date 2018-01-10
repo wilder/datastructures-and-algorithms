@@ -13,7 +13,7 @@ package chapter1
 	append the character to the end of a new string.
 
     Time Complexity: O(n)
-    Space Complexity: O(1)
+    Space Complexity: O(n)
 
 */
 func ReverseCString(str []string) []string {
@@ -23,3 +23,23 @@ func ReverseCString(str []string) []string {
 	}
 	return reversed
 }
+
+/*
+	2 - Solution
+
+	Description:
+	Iterate the string until its half,
+	change the first for the last,
+	the second for the last-1 and so on.
+
+	Time Complexity: O(n/2)
+	Space Complexity: O(1)
+
+ */
+ func ReverseCString2(str []string) []string {
+ 	 var len = len(str)-1
+	 for i := 0; i < len/2; i++ {
+		str[i], str[len-i] = str[len-i], str[i]
+	 }
+	 return str
+ }
