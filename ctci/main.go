@@ -7,9 +7,10 @@ import (
 )
 
 func main() {
-	exercise1_1()
-	exercise1_2()
-	exercise1_3()
+	//exercise1_1()
+	//exercise1_2()
+	//exercise1_3()
+	exercise1_4()
 }
 
 
@@ -34,4 +35,16 @@ func exercise1_3(){
 	fmt.Printf("Exercise 1.3 - hasAllUniqueCharacters(\"abcdbe\"): %s\n", chapter1.RemoveDuplicates("abcdbe")) //abcde
 	fmt.Printf("Exercise 1.3 - hasAllUniqueCharacters(\"abecde\"): %s\n", chapter1.RemoveDuplicates("abecde")) //abecd
 	fmt.Printf("Exercise 1.3 - hasAllUniqueCharacters(\"aabcde\"): %s\n", chapter1.RemoveDuplicates("aabcdeab")) //abcde
+}
+
+func exercise1_4(){
+	fmt.Printf("Exercise 1.4 - isAnagram(\"aaaaaa\"): %t\n", chapter1.IsAnagram("aaaaa")) //true
+	fmt.Printf("Exercise 1.4 - isAnagram(\"abba\"): %t\n", chapter1.IsAnagram("abba")) //true
+	fmt.Printf("Exercise 1.4 - isAnagram(\"abbacbba\"): %t\n", chapter1.IsAnagram("abbabba")) //true
+	fmt.Printf("Exercise 1.4 - isAnagram(\"aabbd\"): %t\n", chapter1.IsAnagram("aabbd")) //false
+
+	fmt.Printf("Exercise 1.4+ - isAnagram2(\"aaaaaa\"): %t\n", chapter1.IsAnagram2("aaaaa")) //true
+	fmt.Printf("Exercise 1.4+ - isAnagram2(\"abba\"): %t\n", chapter1.IsAnagram2("abba")) //true
+	fmt.Printf("Exercise 1.4+ - isAnagram2(\"abbacbba\"): %t\n", chapter1.IsAnagram2("abbabba")) //true
+	fmt.Printf("Exercise 1.4+ - isAnagram2(\"aabbd\"): %t\n", chapter1.IsAnagram2("aabbd")) //false
 }
