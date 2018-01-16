@@ -8,10 +8,10 @@ import (
 
 func main() {
 	//exercise1_1()
-	exercise1_2()
+	//exercise1_2()
 	//exercise1_3()
-	//exercise1_4()
-	exercise1_5()
+	exercise1_4()
+	//exercise1_5()
 }
 
 
@@ -40,15 +40,13 @@ func exercise1_3(){
 }
 
 func exercise1_4(){
-	fmt.Printf("Exercise 1.4 - isAnagram(\"aaaaaa\"): %t\n", chapter1.IsAnagram("aaaaa")) //true
-	fmt.Printf("Exercise 1.4 - isAnagram(\"abba\"): %t\n", chapter1.IsAnagram("abba")) //true
-	fmt.Printf("Exercise 1.4 - isAnagram(\"abbacbba\"): %t\n", chapter1.IsAnagram("abbabba")) //true
-	fmt.Printf("Exercise 1.4 - isAnagram(\"aabbd\"): %t\n", chapter1.IsAnagram("aabbd")) //false
+	fmt.Printf("Exercise 1.4 - isAnagram(\"asdf\", \"fdsa\"): %t\n", chapter1.IsAnagram("asdf", "fdsa")) //true
+	fmt.Printf("Exercise 1.4 - isAnagram(\"asdf\", \"fdsd\"): %t\n", chapter1.IsAnagram("asdf", "fdsd")) //false
+	fmt.Printf("Exercise 1.4 - isAnagram(\"aaaa\", \"aaaaa\"): %t\n", chapter1.IsAnagram("aaaa", "aaaaa")) //false
+	fmt.Printf("Exercise 1.4 - isAnagram(\"asdlfkjh\", \"lkjahsfd\"): %t\n", chapter1.IsAnagram("asdlfkjh", "lkjahsfd")) // true
 
-	fmt.Printf("Exercise 1.4+ - isAnagram2(\"aaaaaa\"): %t\n", chapter1.IsAnagram2("aaaaa")) //true
-	fmt.Printf("Exercise 1.4+ - isAnagram2(\"abba\"): %t\n", chapter1.IsAnagram2("abba")) //true
-	fmt.Printf("Exercise 1.4+ - isAnagram2(\"abbacbba\"): %t\n", chapter1.IsAnagram2("abbabba")) //true
-	fmt.Printf("Exercise 1.4+ - isAnagram2(\"aabbd\"): %t\n", chapter1.IsAnagram2("aabbd")) //false
+	fmt.Printf("Exercise 1.4+ - isAnagram2(\"fasd\", \"fdsa\"): %t\n", chapter1.IsAnagram2("fasd", "fdsa")) //true
+	fmt.Printf("Exercise 1.4+ - isAnagram2(\"asdfa\", \"asdf\"): %t\n", chapter1.IsAnagram2("asdfa", "asdf")) //false
 }
 
 func exercise1_5(){
