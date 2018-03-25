@@ -1,2 +1,2 @@
-# python-practice
-Part of my daily plan for studying Python.
+# datastructures-and-algorithms
+Repository for studying/practicing Data Structures and Algorithms.
