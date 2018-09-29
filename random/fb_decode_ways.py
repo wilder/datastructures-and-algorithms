@@ -16,7 +16,10 @@ decoded_messages = ["ab", "l"]
 def num_in_map(num):
     return int(num) <= 26
 
-def num_ways(encoded_message):
+def num_ways(encoded_message, memo):
+
+    if encoded_message in memo:
+        return memo[encoded_message]
 
     if not encoded_message:
         return 1
@@ -24,22 +27,27 @@ def num_ways(encoded_message):
     if encoded_message[0] == '0':
         return 0
 
-    ways = num_ways(encoded_message[1:])
+    ways = num_ways(encoded_message[1:], memo)
     if len(encoded_message) >= 2 and num_in_map(encoded_message[:2]):
-        ways += num_ways(encoded_message[2:])
+        ways += num_ways(encoded_message[2:], memo)
+
+    memo[encoded_message] = ways
     return ways
 
+def decode_ways(encoded_message):
+    return num_ways(encoded_message, {})
 
 if __name__ == '__main__':
-    print("num_ways('123') = " + str(num_ways('123')))
-    assert num_ways('123') == 3
-    print("num_ways('111') = " + str(num_ways('111')))
-    assert num_ways('111') == 3
-    print("num_ways('1035') = " + str(num_ways('1035')))
-    assert num_ways('1035') == 1
-    print("num_ways('0') = " + str(num_ways('0')))
-    assert num_ways('0') == 0
-    print("num_ways('27') = " + str(num_ways('27')))
-    assert num_ways('27') == 1
-    print("num_ways('270') = " + str(num_ways('270')))
-    assert num_ways('270') == 0
+    memo = {}
+    print("decode_ways('123') = " + str(decode_ways('123')))
+    assert decode_ways('123') == 3
+    print("decode_ways('111') = " + str(decode_ways('111')))
+    assert decode_ways('111') == 3
+    print("decode_ways('1035') = " + str(decode_ways('1035')))
+    assert decode_ways('1035') == 1
+    print("decode_ways('0') = " + str(decode_ways('0')))
+    assert decode_ways('0') == 0
+    print("decode_ways('27') = " + str(decode_ways('27')))
+    assert decode_ways('27') == 1
+    print("decode_ways('270') = " + str(decode_ways('270')))
+    assert decode_ways('270') == 0
