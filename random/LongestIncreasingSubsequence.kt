@@ -1,61 +1,52 @@
-import kotlin.test.assertEquals
-
-/*
- * For each element in the list
- * count the length of the increasing subsequence at that position
- * and then get the biggest.
- *
- * @Return the longest increasing subsequence
- */
 fun longestIncreasingSubsequence(list: List<Int>) : List<Int> {
 
     val longestSubsequenceCountAtIndex = MutableList(list.size, {1})
+    val subsequenceLink = MutableList(list.size, {-1})
 
-    var count = 1
-    list.forEachIndexed { index, current ->
-        if (index > 0 && list[index-1] < current) {
-            count++
-            longestSubsequenceCountAtIndex[index] = count
-        } else {
-            count = 1
+    list.forEachIndexed({index, currentElement ->
+        var maxSubsequenceLength = -1
+        var predecessor = -1
+        for (subIndex in 0 until index) {
+            var subElement = list[subIndex]
+            if (subElement < currentElement
+                    && longestSubsequenceCountAtIndex[subIndex] + 1 > maxSubsequenceLength) {
+                maxSubsequenceLength = longestSubsequenceCountAtIndex[subIndex] + 1
+                predecessor = subIndex
+                longestSubsequenceCountAtIndex[index] = maxSubsequenceLength
+            }
         }
-    }
 
-    val maxCount =  longestSubsequenceCountAtIndex.max()!!
-    return getSubsequenceFromMax(maxCount, list, longestSubsequenceCountAtIndex)!!
+        if (maxSubsequenceLength != -1) {
+            subsequenceLink[index] = predecessor
+        }
+
+    })
+
+    return buildSequenceFromLink(subsequenceLink, list, getBiggestSubsequenceEndPosition(longestSubsequenceCountAtIndex))
 }
 
-fun getSubsequenceFromMax(max: Int, list: List<Int>, countList: List<Int>) : List<Int>? {
-    var lastStartPosition = 0
-    countList.forEachIndexed({index, element ->
-        if (element == max) {
-            return list.subList(lastStartPosition, index + 1)
-        } else if (element == 1) {
-            lastStartPosition = index
+fun getBiggestSubsequenceEndPosition(longestSubsequenceCountAtIndex: List<Int>) : Int {
+    var max = Integer.MIN_VALUE
+    var maxPosition = -1
+    longestSubsequenceCountAtIndex.forEachIndexed { index, element ->
+        if (element > max) {
+            max = element
+            maxPosition = index
         }
-    })
-    return null
+    }
+    return maxPosition
+}
+
+fun buildSequenceFromLink(link: List<Int>, sequence: List<Int>, start: Int) : List<Int> {
+    val increasingSequence = mutableListOf<Int>()
+    var currentPosition = start
+    while (currentPosition != -1) {
+        increasingSequence.add(sequence[currentPosition])
+        currentPosition = link[currentPosition]
+    }
+    return increasingSequence
 }
 
 fun main(args: Array<String>) {
-    assertEquals(
-            listOf(0,1,2,3,4,5,6,7,8,9),
-            longestIncreasingSubsequence(listOf(1,2,3,4,1,2,0,1,2,3,4,5,6,7,8,9,0))
-    )
-
-    assertEquals(
-            listOf(-2, -1, 0, 10, 100, 101),
-            longestIncreasingSubsequence(listOf(1,2,3,4,-1,2,-2,-1,0,10,100,101,6,7,8,9,0))
-    )
-
-    assertEquals(
-            listOf(10,20,30,31),
-            longestIncreasingSubsequence(listOf(10,20,30,31,-1,2,3))
-    )
-
-    assertEquals(
-            listOf(-1,2,3,10,20,30,31),
-            longestIncreasingSubsequence(listOf(-1,2,3,10,20,30,31))
-    )
-
+    println(longestIncreasingSubsequence(listOf(0,-5, 7, 200, -2, 1, 0, 3, 2, 5, 0, 7, 9, 10, 300)))
 }
