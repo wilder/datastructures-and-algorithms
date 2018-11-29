@@ -6,6 +6,40 @@ Given an array of time intervals (start, end) for classroom lectures (possibly o
 For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
 '''
 
+
+'''
+    Sort the intervals by the start position
+    creates a heap with the end of the intervals while iterating
+    if the current interval start is < the heap root (smallest end position in order)
+        increment room count
+    else
+        update the root with the next smallest
+        don't increment because the room doesn't overlap
+    add the current end to the heqp
+
+    Time Complexity O(n log n)
+    Space Complexity O(n/2) 
+'''
+import heapq
+def minimumNumberOfRooms1(intervals):
+
+    if not intervals:
+        return 0
+
+    intervals.sort() # sort by start time
+    heap = [intervals[0][1]]
+
+    rooms = 1
+    for i in range(1, len(intervals)-1):
+        interval = intervals[i]
+        if interval[0] < heap[0]:
+            rooms += 1
+        else:
+            heapq.heappop(heap)
+        heapq.heappush(heap, interval[1])
+    return rooms
+
+
 '''
     Creates a timeline keeping track the number of the class(interval) with the time
     Iterates through the timeline keeping track if there is a class ongoing,
@@ -13,7 +47,7 @@ For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
     Time Complexity = O(n)
     Space Complexity = O(n)
 '''
-def minimumNumberOfRooms1(intervals):
+def minimumNumberOfRooms2(intervals):
 
     if not intervals:
         return 0
@@ -80,11 +114,13 @@ def minimumNumberOfRooms1(intervals):
     return room_count
 
 
-
 if __name__ == "__main__":
-    print(minimumNumberOfRooms1([(30, 75), (0, 50), (60, 150)]))
     assert minimumNumberOfRooms1([(30, 75), (0, 50), (60, 150)]) == 2
     assert minimumNumberOfRooms1([(1,2), (3,4), (5,6)]) == 1
     assert minimumNumberOfRooms1([]) == 0
 
+
+    assert minimumNumberOfRooms2([(30, 75), (0, 50), (60, 150)]) == 2
+    assert minimumNumberOfRooms2([(1,2), (3,4), (5,6)]) == 1
+    assert minimumNumberOfRooms2([]) == 0
 
