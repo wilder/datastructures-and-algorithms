@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Given an array of positive integers (excluding zero) and a target number,
 detect wheter ther is a set of consecutive elements in the array that add
