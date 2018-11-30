@@ -6,10 +6,9 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 
 | #  | Company           |  Solution        |  Time            | Space             
 -----|---------------- |:---------------:| --------------- | --------------- 
-|1| |TODO-Link|TODO|TODO| 
 |2|Uber|TODO-Link|O(n)|O(n)|
-|4|Uber|TODO-Link|O(n)|O(n)|
-|5|Stripe|TODO-Link|O(n)|O(n)|
+|4|Stripe|TODO-Link|O(n)|O(n)|
+|5|Jane Street|TODO-Link|O(1)|O(1)|
 |7|Facebook |TODO-Link|O(n)|O(n)|
 |9|Airbnb|TODO-Link|O(n)|O(n)|
 |10|Apple|TODO-Link|O(1)|O(1)|
