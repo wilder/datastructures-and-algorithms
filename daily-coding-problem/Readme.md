@@ -22,3 +22,5 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |21|Snapchat|TODO-Link|O(n log n)|O(n/2)|
 |25|Facebook|TODO-Link|O(n)|O(n)|
 |26|Google|TODO-Link|O(n)|O(1)|
+|27|Facebook|TODO-Link|O(n)|O(n)|
+|28|Google|TODO-Link|O(|V + E|)|O(n)|
