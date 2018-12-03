@@ -10,6 +10,7 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |4|Stripe|TODO-Link|O(n)|O(n)|
 |5|Jane Street|TODO-Link|O(1)|O(1)|
 |7|Facebook |TODO-Link|O(n)|O(n)|
+|8|Google|TODO-Link|O(n)|O(1)|
 |9|Airbnb|TODO-Link|O(n)|O(n)|
 |10|Apple|TODO-Link|O(1)|O(1)|
 |11|Airbnb|TODO-Link|O(n)|O(n)|
