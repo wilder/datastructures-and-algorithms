@@ -17,6 +17,7 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |12|Amazon|TODO-Link|O(n)|O(n)|
 |13|Amazon|TODO-Link|?|O(n)|
 |16|Twitter|TODO-Link|O(n)|O(1)|
+|18|Google|TODO-Link|O(n)|O(k)|
 |20|Google|TODO-Link|O(n)|O(1)|
 |20|Google|TODO-Link|O(n)|O(n)|
 |21|Snapchat|TODO-Link|O(n)|O(n)|
@@ -26,3 +27,4 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |25|Facebook|TODO-Link|O(n)|O(n)|
 |26|Google|TODO-Link|O(n)|O(1)|
 |27|Facebook|TODO-Link|O(n)|O(n)|
+|28|Palantir |TODO-Link|O(n)|O(n)|
