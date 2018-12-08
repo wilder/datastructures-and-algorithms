@@ -29,3 +29,5 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |27|Facebook|TODO-Link|O(n)|O(n)|
 |28|Palantir |TODO-Link|O(n)|O(n)|
 |29|Amazon|TODO-Link|O(n)|O(n)|
+|30|Facebook|TODO-Link|O(n)|O(n)|
+|31|Google|TODO-Link|O(n\*m)|O(n\*m)|
