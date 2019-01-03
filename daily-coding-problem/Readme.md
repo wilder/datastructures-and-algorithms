@@ -33,3 +33,4 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |31|Google|TODO-Link|O(n\*m)|O(n\*m)|
 |34|Google|TODO-Link|O(n)|O(1)|
 |49|Amazon|TODO-Link|O(n)|O(1)|
+|50|Microsoft|TODO-Link|O(n)|O(1)|
