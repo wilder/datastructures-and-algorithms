@@ -35,3 +35,4 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |35|Google|TODO-Link|O(n)|O(1)|
 |49|Amazon|TODO-Link|O(n)|O(1)|
 |50|Microsoft|TODO-Link|O(n)|O(1)|
+|52|Google|TODO-Link|O(1)|O(n)|
