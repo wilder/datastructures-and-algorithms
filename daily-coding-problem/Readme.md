@@ -37,4 +37,5 @@ If you have any doubt or a suggestion on how to improve any of the solutions fee
 |50|Microsoft|TODO-Link|O(n)|O(1)|
 |52|Google|TODO-Link|O(1)|O(n)|
 |53|Apple|TODO-Link|push: O(n), others: O(1)|O(n)|
+|63|Microsoft|TODO-Link|O(n!))|O(1)|
 |69|Facebook|TODO-Link|O(n log n))|O(n)|
